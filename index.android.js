@@ -16,12 +16,13 @@ export default class ToolBar extends Component {
         <Icon.ToolbarAndroid style={styles.toolbar}
           title='GuitarBuddy'
           titleColor="white"
-          subtitle='Tuner'
+          //subtitle='Tuner'
           navIconName="navicon"
           //onIconClicked={props.navigator.pop}
           actions={[
-            { title: 'Settings', iconName: 'cog', iconSize: 30, show: 'always' },
-            { title: 'About', iconName: 'cog', iconSize: 30, show: 'ifroom' }
+            { title: 'Bluetooth', iconName: 'bluetooth-b', show: 'always' },
+            { title: 'Settings', iconName: 'cog', show: 'always' },
+            { title: 'About', iconName: 'cog'}
           ]}
           overflowIconName="ellipsis-v"
         />
