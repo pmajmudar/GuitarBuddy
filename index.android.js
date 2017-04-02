@@ -5,37 +5,28 @@
  */
 
 import React, { Component } from 'react';
-import { AppRegistry, View, Text, StyleSheet } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import GuitarBuddy from './GuitarBuddy';
+import { AppRegistry, View, Text, Navigator, StyleSheet } from 'react-native';
+import Tuner from './GuitarBuddy';
+import ToolBar from './ToolBar';
 
-export default class ToolBar extends Component {
+export default class App extends Component {
 
   render() {
     return (
-        <Icon.ToolbarAndroid style={styles.toolbar}
-          title='GuitarBuddy'
-          titleColor="white"
-          //subtitle='Tuner'
-          navIconName="navicon"
-          //onIconClicked={props.navigator.pop}
-          actions={[
-            { title: 'Bluetooth', iconName: 'bluetooth-b', show: 'always' },
-            { title: 'Settings', iconName: 'cog', show: 'always' },
-            { title: 'About', iconName: 'cog'}
-          ]}
-          overflowIconName="ellipsis-v"
-        />
+      <View style={styles.container}>
+        <ToolBar title="RiffKit"/>
+        <Tuner/>
+      </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
-  toolbar: {
-    height: 56,
-    backgroundColor: 'steelblue'
+  container: {
+    backgroundColor: '#FFEEFF',
+    flex: 1
   },
 });
 
 
-AppRegistry.registerComponent('GuitarBuddy', () => ToolBar);
+AppRegistry.registerComponent('GuitarBuddy', () => App);

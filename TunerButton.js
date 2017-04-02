@@ -28,7 +28,7 @@ export default class TunerButton extends Component {
                             onPressIn={this._onPress}
                             onPressOut={this._onRelease}>
           <View style={styles.button}>
-            <Text style={styles.label}>{this.state.pressing ? 'E' : 'E!'}</Text>
+            <Text style={styles.label}>{this.props.note}</Text>
           </View>
         </TouchableHighlight>
       </View>
@@ -38,7 +38,7 @@ export default class TunerButton extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    //flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },

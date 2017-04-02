@@ -13,41 +13,43 @@ import {
 
 import TunerButton from './TunerButton';
 
-export default class GuitarBuddy extends Component {
+export default class Tuner extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit the GuitarBuddy index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-        <TunerButton/>
+      <View style={styles.scene}>
+        <Text style={styles.title}>Tuner</Text>
+        <View style={styles.content}>
+          <View style={styles.tuner}>
+            <TunerButton note='E'/>
+            <TunerButton note='A'/>
+            <TunerButton note='D'/>
+            <TunerButton note='G'/>
+            <TunerButton note='B'/>
+            <TunerButton note='E'/>
+          </View>
+        </View>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  scene: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    //justifyContent: 'center',
+    //alignItems: 'center'
   },
-  welcome: {
-    fontSize: 20,
+  title: {
+    fontSize: 36,
     textAlign: 'center',
     margin: 10,
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  content: {
+    flex: 1,
+    justifyContent: 'center'
   },
+  tuner: {
+    flexDirection: 'row',
+    justifyContent: 'space-around'
+  }
 });
