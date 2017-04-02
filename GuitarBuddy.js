@@ -17,7 +17,7 @@ export default class Tuner extends Component {
   render() {
     return (
       <View style={styles.scene}>
-        <Text style={styles.title}>Tuner</Text>
+        <Text style={styles.title}>Start tuning</Text>
         <View style={styles.content}>
           <View style={styles.tuner}>
             <TunerButton note='E'/>
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     //alignItems: 'center'
   },
   title: {
-    fontSize: 36,
+    fontSize: 28,
     textAlign: 'center',
     margin: 10,
   },
