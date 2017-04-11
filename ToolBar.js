@@ -3,11 +3,12 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import BluetoothSerial from 'react-native-bluetooth-serial'
 
 export default class ToolBar extends Component {
 
   state = {
-    bluetooth: false
+    bluetoothEnabled: false
   };
 
   render() {
@@ -17,7 +18,7 @@ export default class ToolBar extends Component {
           titleColor="white"
           navIconName={this.props.leafRoute ? "md-arrow-back" : "md-menu"}
           actions={[
-                { title: 'Bluetooth', iconName: !this.state.bluetooth ? 'md-bluetooth' : 'md-arrow-back', show: 'always' },
+                { title: 'Bluetooth', iconName: 'md-bluetooth', iconColor: !this.state.bluetoothEnabled ? 'white' : 'blue', show: 'always' },
                 { title: 'Settings', iconName: 'md-settings', show: 'always' },
                 { title: 'About', show: 'never'}
               ]}
@@ -38,8 +39,8 @@ export default class ToolBar extends Component {
     } else if (position === 1) {
       this.props.navPush(this.props.routes[3]);
     } else if (position === 0) {
-      this.setState({bluetooth: true})
-      console.log("Bluetooth");
+      BluetoothSerial.enable()
+                     .then((res) => this.setState({bluetoothEnabled: true}) )
     }
   }
 }
