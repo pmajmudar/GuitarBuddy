@@ -17,7 +17,9 @@ export default class App extends Component {
       {title: 'Riff Kit', index:0, leafRoute: false},
       {title: 'About', index:1, leafRoute: true},
       {title: 'Effects', index:2, leafRoute: false},
-      {title: 'Settings', index:3, leafRoute: true}
+      {title: 'Settings', index:3, leafRoute: true},
+      {title: 'Metronome', index:4, leafRoute: false},
+      {title: 'Chords', index:5, leafRoute: false}
     ];
   }
 
