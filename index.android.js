@@ -9,6 +9,8 @@ import { AppRegistry, View, Text, Navigator, StyleSheet } from 'react-native';
 import Tuner from './GuitarBuddy';
 import ToolBar from './ToolBar';
 import About from './About';
+import ChordLibrary from './js/scenes/ChordLibrary';
+import Metronome from './js/scenes/Metronome';
 
 export default class App extends Component {
   constructor() {
@@ -34,6 +36,10 @@ export default class App extends Component {
       scene = (<Text>Guitar effects</Text>);
     } else if (route.index == 3) {
       scene = (<Text>Some settings</Text>);
+    } else if (route.index == 4) {
+      scene = <Metronome/>;
+    } else if (route.index == 5) {
+      scene = <ChordLibrary/>;
     } else {
       scene = (<Text>Not implemented</Text>);
     }
